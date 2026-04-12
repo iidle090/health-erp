@@ -17,6 +17,7 @@
     "lucide-react": "^0.263.0",
     "framer-motion": "^11.0.0",
     "class-variance-authority": "^0.7.0",
+    "tailwind-merge": "^2.2.0",
     "date-fns": "^3.6.0"
   },
 
