@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useLocation } from "wouter";
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider } from "@/components/ui/sidebar";
-import { LayoutDashboard, Users, UserRound, Syringe, Receipt, BarChart3, Settings, Scissors, Siren, Package, Users2, GraduationCap, KeyRound } from "lucide-react";
+import { LayoutDashboard, Users, Syringe, Receipt, BarChart3, Settings, Scissors, Siren, Package, Users2, GraduationCap, KeyRound } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const navigation = [
   { name: "Dashboard",      href: "/admin-dashboard",                icon: LayoutDashboard },
   { name: "Patients",       href: "/admin-dashboard/patients",       icon: Users },
-  { name: "Doctors",        href: "/admin-dashboard/doctors",        icon: UserRound },
+  { name: "Doctors",        href: "/admin-dashboard/doctors",        icon: Users },
   { name: "Nurses",         href: "/admin-dashboard/nurses",         icon: Syringe },
   { name: "Theatre / OT",   href: "/admin-dashboard/theatre",        icon: Scissors },
   { name: "Emergency",      href: "/admin-dashboard/emergency",      icon: Siren },
