@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Phone, Stethoscope, AlertCircle, Search, Thermometer, Heart, Wind, Weight, Activity, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
+import { Phone, Stethoscope, AlertCircle, Search, Thermometer, Heart, Wind, Activity, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
