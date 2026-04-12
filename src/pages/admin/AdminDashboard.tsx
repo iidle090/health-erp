@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Users, UserRound, Calendar, Activity, Stethoscope, FlaskConical, Pill, ShieldCheck } from "lucide-react";
+import { Users, Calendar, Activity, Stethoscope, FlaskConical, Pill, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useStaffAccounts } from "@/context/StaffAccountStore";
 import { usePatientStore } from "@/context/PatientStore";
@@ -132,7 +132,7 @@ export function AdminDashboard() {
         <div className="rounded-xl border border-border bg-card p-5 shadow-sm">
           <div className="flex items-center gap-3 mb-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-50">
-              <UserRound className="h-4 w-4 text-orange-700" />
+              <Users className="h-4 w-4 text-orange-700" />
             </div>
             <p className="text-sm font-medium text-muted-foreground">Nurses</p>
           </div>
