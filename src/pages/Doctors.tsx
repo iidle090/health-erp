@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Plus, Search, Edit, Trash2, KeyRound, RefreshCw, Eye, EyeOff, Copy, UserRound, Stethoscope } from "lucide-react";
+import { Plus, Search, Edit, Trash2, KeyRound, RefreshCw, Eye, EyeOff, Copy, Users, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -244,7 +244,7 @@ export function Doctors() {
             {filtered.length === 0 ? (
               <tr>
                 <td colSpan={7} className="px-4 py-14 text-center">
-                  <UserRound className="h-10 w-10 mx-auto mb-2 text-muted-foreground/30" />
+                  <Users className="h-10 w-10 mx-auto mb-2 text-muted-foreground/30" />
                   <p className="text-sm text-muted-foreground">No doctors yet. Add your first doctor above.</p>
                 </td>
               </tr>

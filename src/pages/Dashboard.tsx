@@ -7,7 +7,7 @@ import {
   useGetRevenueChart,
   useGetAppointmentsChart
 } from "@workspace/api-client-react";
-import { Users, UserRound, Calendar, DollarSign } from "lucide-react";
+import { Users, Calendar, DollarSign } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
 import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
@@ -40,7 +40,7 @@ export function Dashboard() {
         <Card className="shadow-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Doctors</CardTitle>
-            <UserRound className="h-4 w-4 text-muted-foreground" />
+            <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{isLoadingSummary ? "-" : summary?.totalDoctors}</div>
