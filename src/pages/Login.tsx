@@ -7,18 +7,17 @@ import { useAuth, type UserRole } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { SUPER_ADMIN_MASTER_PW } from "@/context/StaffAccountStore";
 
-const roleConfig: Record<UserRole, { label: string; icon: React.ElementType; badgeCls: string; demoCls: string; demoTextCls: string }> = {
-  admin:        { label: "Admin Login",        icon: ShieldCheck,   badgeCls: "bg-[#fdf2f4] text-[#8B1A2F]",      demoCls: "bg-[#fdf2f4]",    demoTextCls: "text-[#8B1A2F]" },
-  doctor:       { label: "Doctor Login",       icon: Stethoscope,   badgeCls: "bg-amber-50 text-amber-700",        demoCls: "bg-amber-50",     demoTextCls: "text-amber-700" },
-  nurse:        { label: "Nurse Login",        icon: HeartPulse,    badgeCls: "bg-orange-50 text-orange-700",      demoCls: "bg-orange-50",    demoTextCls: "text-orange-700" },
-  superadmin:   { label: "Super Admin Login",  icon: Crown,         badgeCls: "bg-[#1a0a10] text-[#ebc325]",      demoCls: "bg-[#1a0a10]/10", demoTextCls: "text-[#1a0a10]" },
-  lab:          { label: "Laboratory Login",   icon: FlaskConical,  badgeCls: "bg-blue-50 text-blue-700",          demoCls: "bg-blue-50",      demoTextCls: "text-blue-700" },
-  pharmacy:     { label: "Pharmacy Login",     icon: Pill,          badgeCls: "bg-green-50 text-green-700",        demoCls: "bg-green-50",     demoTextCls: "text-green-700" },
-  accountant:   { label: "Accountant Login",   icon: Wallet,        badgeCls: "bg-purple-50 text-purple-700",      demoCls: "bg-purple-50",    demoTextCls: "text-purple-700" },
-  receptionist: { label: "Receptionist Login", icon: ConciergeBell, badgeCls: "bg-teal-50 text-teal-700",          demoCls: "bg-teal-50",      demoTextCls: "text-teal-700" },
-  radiology:    { label: "Radiology Login",    icon: ScanLine,      badgeCls: "bg-sky-50 text-sky-700",            demoCls: "bg-sky-50",       demoTextCls: "text-sky-700" },
+const roleConfig: Record<UserRole, { label: string; icon: React.ElementType; badgeCls: string }> = {
+  admin:        { label: "Admin Login",        icon: ShieldCheck,   badgeCls: "bg-[#fdf2f4] text-[#8B1A2F]" },
+  doctor:       { label: "Doctor Login",       icon: Stethoscope,   badgeCls: "bg-amber-50 text-amber-700" },
+  nurse:        { label: "Nurse Login",        icon: HeartPulse,    badgeCls: "bg-orange-50 text-orange-700" },
+  superadmin:   { label: "Super Admin Login",  icon: Crown,         badgeCls: "bg-black text-yellow-400" },
+  lab:          { label: "Laboratory Login",   icon: FlaskConical,  badgeCls: "bg-blue-50 text-blue-700" },
+  pharmacy:     { label: "Pharmacy Login",     icon: Pill,          badgeCls: "bg-green-50 text-green-700" },
+  accountant:   { label: "Accountant Login",   icon: Wallet,        badgeCls: "bg-purple-50 text-purple-700" },
+  receptionist: { label: "Receptionist Login", icon: ConciergeBell, badgeCls: "bg-teal-50 text-teal-700" },
+  radiology:    { label: "Radiology Login",    icon: ScanLine,      badgeCls: "bg-sky-50 text-sky-700" },
 };
 
 const DEFAULT_EMAILS: Record<UserRole, string> = {
@@ -46,24 +45,20 @@ export function Login() {
   const [email, setEmail] = useState(DEFAULT_EMAILS[role]);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  // ✅ FIXED LOGIN (NO BACKEND)
+  // ✅ SIMPLE LOGIN (ALWAYS WORKS)
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
 
-    // always login → opens correct dashboard
+    // this logs user in directly (no backend needed)
     login(role, email, "Demo User", null);
-
-    setLoading(false);
   };
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6">
       <motion.div className="w-full max-w-md">
         <button onClick={() => navigate("/")} className="mb-6 flex items-center gap-2 text-sm">
-          <ArrowLeft className="h-4 w-4" />Back
+          <ArrowLeft className="h-4 w-4" /> Back
         </button>
 
         <div className="rounded-2xl border bg-card shadow-sm p-8">
@@ -99,7 +94,7 @@ export function Login() {
             </div>
 
             <Button className="w-full" type="submit">
-              {loading ? "Signing in..." : "Sign in"}
+              Sign in
             </Button>
 
           </form>
